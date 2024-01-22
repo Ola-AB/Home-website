@@ -19,6 +19,8 @@ body {
 }
 
 .wrapper {
+	margin: 0 auto;
+	max-width: 1200px;
 	width: 100%;
 }
 
@@ -34,7 +36,6 @@ body {
 
 .logo {
 	position: absolute;
-	width: 450px;
 	font-size: 4rem;
 	margin-left: auto;
 	margin-right: auto;
