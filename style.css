@@ -196,23 +196,6 @@ body {
 	right: 0;
 }
 
-/* .content {
-	width: 100rem;
-	margin-left: 0;
-	margin-right: 0;
-} */
-
-.socials {
-	width: 100%;
-	text-align: center;
-	background-color: #6c7b95;
-}
-
-.socialsdiv {
-	width: 100%;
-	margin: 0 auto;
-	padding: 0 auto;
-}
 
 /* media queries */
 @media (min-width: 992px) {
