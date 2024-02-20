@@ -11,6 +11,8 @@ const MENU_TABS = document.querySelectorAll('.menu-tab');
 
 const showInfo = id => {
 
+    console.log(id);
+
     menuSections.forEach(section => section.style.display = 'none')
     MENU_TABS.forEach(tab => tab.classList.remove('menu-tab-active'))
 
