@@ -17,29 +17,20 @@ body {
 	height: 100vh;
 	align-items: center;
 	justify-content: center;
-	font-size: 22px;
+	font-size: 20px;
 	background-color: #464159;
 	color: #fff;
 	overflow: hidden;
 }
-.wrapper-menu {
-	padding: 2em;
-	border-radius: 8px;
-	background-color: #fff;
-}
-
-.menu-tabs {
-	margin-bottom: 2em;
-}
 
 .menu-tab {
 	padding: 0.5em 1em;
-	font-size: 36px;
+	font-size: 30px;
 	background-color: #fff;
 	border-radius: 8px;
 	border: 1px solid #333;
 	cursor: pointer;
-	transition: background-color .3s;
+	transition: background-color 0.3s;
 }
 
 .menu-tab:hover {
@@ -54,7 +45,6 @@ body {
 	margin: 0 auto;
 	max-width: 1200px;
 	width: 100%;
-
 }
 
 .header {
@@ -113,6 +103,19 @@ body {
 }
 
 /* nav */
+
+.wrapper-menu {
+	padding: 2em;
+	border-radius: 8px;
+	background-color: rgb(112, 122, 124);
+}
+
+.nav-menu {
+	display: flex;
+	margin-bottom: 2em;
+	flex-direction: row;
+	justify-content: space-around;
+}
 
 .nav {
 	height: 100vh;
@@ -229,9 +232,27 @@ body {
 	right: 0;
 }
 
-
 /* media queries */
+
+@media (max-width: 768px) {
+	.nav-menu {
+		display: none;
+	}
+}
+
+@media (min-width: 768px) {
+	.menu-tab {
+		font-size: 18px;
+	}
+	.burger-btn {
+		display: none;
+	}
+}
+
 @media (min-width: 992px) {
+	.break {
+		display: none;
+	}
 	.header {
 		height: 75vh;
 		background-image: url(./img/beach_logo_1920.jpg);
@@ -261,7 +282,7 @@ body {
 		right: 5.5vw;
 	}
 
-    .background {
-        display: none;
-    }
+	.background {
+		display: none;
+	}
 }

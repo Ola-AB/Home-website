@@ -4,23 +4,19 @@ burgerBtn.addEventListener('click', () => {
 })
 
 const menuSections = document.querySelectorAll('.menu-section');
-const MENU_TABS = document.querySelectorAll('.menu-tab');
+const tabsMenu = document.querySelectorAll('.menu-tab');
 
 
 
 
-const showInfo = id => {
+const showInfo = () => {
 
-    console.log(id);
-
-    menuSections.forEach(section => section.style.display = 'none')
-    MENU_TABS.forEach(tab => tab.classList.remove('menu-tab-active'))
-
-    document.getElementById(id).style.display = 'block';
+    tabsMenu.classList.toggle('is-active');
 
 }
 
-MENU_TABS.addEventListener("click", showInfo);
+
+tabsMenu.addEventListener("click", showInfo);
 
 
 
