@@ -14,50 +14,67 @@ html {
 body {
 	font-family: "Montserrat", sans-serif;
 	font-family: "Source Code Pro", monospace;
+	height: 100vh;
+	align-items: center;
+	justify-content: center;
+	font-size: 20px;
 	background-color: #464159;
 	color: #fff;
+	overflow: hidden;
 }
+
+.menu-tab-active {
+	background-color: rgba(31, 83, 179, 0.07);
+}
+
 .wrapper {
-	margin: auto;
+	margin: 0 auto;
 	max-width: 1200px;
 	width: 100%;
-	height: 100%;
 }
+
 .header {
 	position: relative;
 	width: 100%;
-	height: 50vh;
+	height: 35vh;
+	padding: 10em 0;
 	background-image: url(./img/beach_logo_640.jpg);
 	background-size: cover;
+	background-position: center;
 }
+
 .logo {
 	position: absolute;
-	font-size: 7rem;
+	font-size: 4rem;
 	margin-left: auto;
 	margin-right: auto;
+	justify-content: center;
 	text-align: center;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
+
 /* hamburger */
 .checkbox {
 	display: none;
 }
+
 .button {
-	position: fixed;
-	background-color: white;
+	background-color: rgba(255, 255, 255, 0.411);
 	height: 5rem;
 	width: 5rem;
 	border-radius: 50%;
+	position: fixed;
 	top: 2vh;
 	right: 4vw;
-	z-index: 2000;
+	z-index: 1000;
 	box-shadow: 0 1rem 3rem black;
 	text-align: center;
 	cursor: pointer;
 }
-.background {
+
+.burger-btn {
 	height: 4rem;
 	width: 4rem;
 	border-radius: 50%;
@@ -72,13 +89,18 @@ body {
 
 /* nav */
 
+/* .wrapper-menu {
+	padding: 2em;
+	border-radius: 8px;
+	background-color: rgb(112, 122, 124);
+} */
+
 .nav-menu {
 	display: flex;
 	margin-bottom: 2em;
 	flex-direction: row;
 	justify-content: space-around;
 }
-
 .menu-tab {
 	padding: 0.5em 1em;
 	text-align: center;
@@ -98,15 +120,9 @@ body {
 	background-color: rgba(70, 65, 89, 0.124);
 }
 
-.wrapper-menu {
-	padding: 2em;
-	border-radius: 8px;
-	/* background-color: rgb(112, 122, 124); */
-}
-
 .nav-mobile {
-	position: fixed;
 	height: 100vh;
+	position: fixed;
 	top: 0;
 	right: -60vw;
 	z-index: 1500;
@@ -114,6 +130,7 @@ body {
 	width: 0;
 	transition: all 0.8s;
 }
+
 .nav-items {
 	position: absolute;
 	display: flex;
@@ -125,10 +142,12 @@ body {
 	text-align: center;
 	width: 100%;
 }
+
 .item {
 	margin: 1rem;
 	font-size: 36px;
 }
+
 .nav-item:link,
 .nav-item:visited {
 	display: inline-block;
@@ -147,6 +166,7 @@ body {
 	background-size: 220%;
 	transition: all 0.4s;
 }
+
 .nav-item:hover,
 .nav-item:active {
 	color: lightgreen;
@@ -185,30 +205,37 @@ body {
 	top: 0.8rem;
 }
 
-.button:hover icon:before {
+.burger-btn:hover icon:before {
 	top: -1rem;
 }
-.button:hover icon::after {
+.burger-btn:hover icon::after {
 	top: 1rem;
 }
 
-.checkbox:checked + .button .icon {
+.checkbox:checked + .burger-btn .icon {
 	background-color: transparent;
 }
 
-.checkbox:checked + .button .icon::before {
+.checkbox:checked + .burger-btn .icon::before {
 	top: 0;
 	transform: rotate(135deg);
 }
-.checkbox:checked + .button .icon::after {
+.checkbox:checked + .burger-btn .icon::after {
 	top: 0;
 	transform: rotate(-135deg);
 }
 
 /* functionality */
-.checkbox:checked ~ .background {
-	transform: scale(80);
+.checkbox:checked ~ .burger-btn {
+	transform: scale(200);
 }
+
+/* od Cichego */
+.burger-btn--active ~ .burger-bg {
+	transform: scale(200);
+}
+/*  */
+
 .checkbox:checked ~ .nav-mobile {
 	opacity: 1;
 	width: 100%;
@@ -217,35 +244,48 @@ body {
 
 /* media queries */
 
-@media (max-width: 810px) {
-	.wrapper-menu {
+@media (max-width: 768px) {
+	/* .nav-menu {
+		display: none;
+	} */
+	.button {
 		display: none;
 	}
 }
-@media (min-width: 811px) {
-	.button,
-	.background {
-		display: none;
-	}
+
+@media (min-width: 768px) {
 	.menu-tab {
-		font-size: 17px;
+		font-size: 18px;
+	}
+	.button {
+		display: none;
 	}
 }
 
 @media (min-width: 992px) {
-	.menu-tab {
-		font-size: 20px;
+	.break {
+		display: none;
 	}
-
 	.header {
 		height: 75vh;
 		background-image: url(./img/beach_logo_1920.jpg);
 	}
 
+	.nav-item:link {
+		font-size: 4.5rem;
+		padding: 2rem 3rem;
+	}
 	.logo p,
 	i {
-		font-size: 9rem;
-		display: inline;
+		font-size: 10rem;
+		display: inline-flex;
+	}
+	.burger-btn {
+		height: 7rem;
+		width: 7rem;
+		position: fixed;
+		top: 3vh;
+		right: 5vw;
 	}
 
 	.background {
@@ -255,13 +295,7 @@ body {
 		right: 5.5vw;
 	}
 
-	/* .background {
+	.background {
 		display: none;
-	} */
-}
-
-@media (min-width: 1200px) {
-	.menu-tab {
-		font-size: 25px;
 	}
 }
