@@ -318,7 +318,7 @@ body {
 }
 @media (min-width: 811px) {
 	.header {
-		height: 70vh;
+		height: 60vh;
 	}
 	.button,
 	.background {
@@ -353,6 +353,9 @@ body {
 		width: 6rem;
 		top: 3.5vh;
 		right: 5.5vw;
+	}
+	.about-me {
+		height: 40em;
 	}
 
 	/* .background {
