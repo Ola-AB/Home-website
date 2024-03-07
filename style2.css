@@ -59,7 +59,7 @@ body {
 	position: fixed;
 	top: 2.5vh;
 	right: 4.5vw;
-	background-image: radial-gradient(rgb(104, 100, 100), rgb(69, 66, 66), white);
+	background-image: radial-gradient(rgb(104, 100, 100), rgb(69, 66, 66), #fff);
 	z-index: 1000;
 
 	transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
@@ -130,14 +130,14 @@ body {
 	font-size: 3rem;
 	font-weight: 300;
 	padding: 1rem 2rem;
-	color: white;
+	color: #fff;
 	text-decoration: none;
 	text-transform: uppercase;
 	background-image: linear-gradient(
 		120deg,
 		transparent 0%,
 		transparent 50%,
-		white 50%
+		#fff 50%
 	);
 	background-size: 220%;
 	transition: all 0.4s;
@@ -283,6 +283,105 @@ body {
 		text-transform: uppercase;
 		letter-spacing: 2px;
 	}
+}
+
+/* courses */
+
+.courses__card {
+	position: relative;
+	margin: 1em 0;
+	height: 450px;
+	color: #fff;
+	text-align: center;
+	perspective: 1000px;
+
+	/* &-img {
+		padding: 2em;
+		height: 100%;
+		border-radius: 8px;
+		background-size: cover;
+		transition: transform 1s, opacty 1s;
+	} */
+}
+.courses__card: {
+	hover .courses__card-img 
+	transform: rotateY(-180deg);
+	opacity: 0;
+}
+ .courses__card:hover {
+	.courses__card-info 
+	transform: rotateY(0);
+	opacity: 1;
+} 
+.courses__card-img {
+	padding: 2em;
+	height: 100%;
+	border-radius: 8px;
+	background-size: cover;
+	transition: transform 1s, opacty 1s;
+}
+.courses__card-img--first {
+	background-color: #94e8b4;
+}
+.courses__card-img--second {
+	background-color: #72bda3;
+}
+.courses__card-img--third {
+	background-color: #5e8c61;
+}
+.courses__card-img--fourth {
+	background-color: #d5cad6;
+}
+
+.courses__card-img-title {
+	font-family: "Source", cursive;
+	font-size: 2.8rem;
+}
+.courses__card-img-info {
+	position: absolute;
+	bottom: 30px;
+	right: 30px;
+	font-size: 1.8rem;
+}
+.courses__card-img-info {
+	margin-right: 0.3em;
+}
+.courses__card-info {
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	background-color: #390040;
+	border-radius: 8px;
+	opacity: 0;
+	transform: rotateY(180deg);
+	transition: transform 1s, opacity 1s;
+}
+.courses__card-img-title {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	top: 1.2em;
+	font-family: "Source", cursive;
+	font-size: 2.8rem;
+}
+
+.courses__card-info-list {
+	margin: 0 auto;
+	width: 70%;
+	list-style: none;
+}
+.courses__card-info-list-item {
+	padding: 1em;
+	font-size: 1.4rem;
+	border-bottom: 1px solid #eee;
+}
+.courses__card-info-list-item:last-child {
+	border-bottom: none;
 }
 
 /* media queries */
