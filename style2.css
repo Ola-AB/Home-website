@@ -14,7 +14,9 @@ html {
 body {
 	font-family: "Montserrat", sans-serif;
 	font-family: "Source Code Pro", monospace;
-	background-color: #464159;
+	background: linear-gradient(45deg, #170e13, #7a7adb);
+	min-width: 100vw;
+	min-height: 100vh;
 	color: #fff;
 }
 
@@ -83,7 +85,7 @@ body {
 	border-radius: 8px;
 	border: 1px solid #333;
 	cursor: pointer;
-	font-family: "Montserrat", sans-serif;
+	font-family: "Source", cursive;
 	text-decoration: none;
 	font-weight: bold;
 	transition: background-color 0.3s;
@@ -219,11 +221,13 @@ body {
 	flex-direction: column;
 	align-items: center;
 	text-align: center;
+	overflow: hidden;
 }
 
 .foto-section {
 	position: relative;
 	height: 30vh;
+	
 }
 
 .about-me-img {
@@ -400,6 +404,51 @@ body {
 }
 .courses__card-info-list-item:last-child {
 	border-bottom: none;
+}
+
+/* hobbies */
+.hobbies h1 {
+	padding: 1em 2em;
+	align-items: center;
+	text-align: center;
+	font-family: "Source", cursive;
+	font-size: 2.4rem;
+	text-transform: uppercase;
+}
+.gallery {
+position: relative;
+}
+
+.gallery-items {
+	position: absolute;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	list-style-type: none;
+	justify-content: center;
+	background-color: #1c1121e4;
+	padding: 2em;
+	
+}
+.thumbnail {
+	margin: 2rem;
+	border: solid 1px #807f7fd7;
+	border-radius: 5px;
+	max-height: 15rem;
+	max-width: 20rem;
+	overflow: hidden;
+	transform: scale(1);
+	transition: transform 0.3s;
+}
+
+.thumbnail:hover {
+transform: scale(1.2);
+}
+
+.thumbnail img {
+	height: 100%;
+	width: 100%;
+	object-fit: inherit; /* sprawia że zdjęcia nie są nienaturalnie rozciągnięte */
 }
 
 /* media queries */
