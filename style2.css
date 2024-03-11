@@ -18,6 +18,7 @@ body {
 	min-width: 100vw;
 	min-height: 100vh;
 	color: #fff;
+	overflow-x: hidden;
 }
 
 .header {
@@ -227,7 +228,6 @@ body {
 .foto-section {
 	position: relative;
 	height: 30vh;
-	
 }
 
 .about-me-img {
@@ -416,33 +416,35 @@ body {
 	text-transform: uppercase;
 }
 .gallery {
-position: relative;
+	position: relative;
 }
 
 .gallery-items {
 	position: absolute;
 	display: flex;
+	width: 100vw;
 	flex-wrap: wrap;
 	justify-content: space-between;
 	list-style-type: none;
 	justify-content: center;
 	background-color: #1c1121e4;
 	padding: 2em;
-	
 }
 .thumbnail {
 	margin: 2rem;
 	border: solid 1px #807f7fd7;
 	border-radius: 5px;
+	box-shadow: 0 0 48px 5px rgba(0, 0, 0, 0.894);
 	max-height: 15rem;
 	max-width: 20rem;
 	overflow: hidden;
 	transform: scale(1);
 	transition: transform 0.3s;
+	cursor: pointer;
 }
 
 .thumbnail:hover {
-transform: scale(1.2);
+	transform: scale(1.2);
 }
 
 .thumbnail img {
@@ -450,6 +452,27 @@ transform: scale(1.2);
 	width: 100%;
 	object-fit: inherit; /* sprawia że zdjęcia nie są nienaturalnie rozciągnięte */
 }
+
+.popup {
+	position: absolute;
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	backdrop-filter: blur(3px);
+	background: rgba(0, 0, 0, 0.5);
+	height: 100vh;
+	width: 100vw;
+	left: 0;
+	top: 0;
+	
+}
+
+.popup__img {
+	max-height: 80%;
+	max-width: 80%;
+}
+
 
 /* media queries */
 
