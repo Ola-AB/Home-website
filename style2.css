@@ -477,7 +477,7 @@ body {
 }
 
 .popup__close {
-	font-size: 10rem;
+	font-size: 6rem;
 	background-color: transparent;
 	border: none;
 	position: fixed;

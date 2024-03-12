@@ -12,36 +12,6 @@ const ARROW_RIGHT = document.querySelector(".popup__arrow--right");
 
 let currentImgIndex = 0;
 
-// const fotoScale = (e) => {
-// 	POPUP.classList.remove("hidden");
-// 	POPUP_IMG.src = e.target.src;
-// };
-
-// const fotoClose = () => {
-// 	POPUP.classList.add("hidden");
-// };
-
-// THUMBNAILS.forEach((thumbnail, index) => {
-// 	thumbnail.addEventListener("click", (e) => {
-// 		fotoScale(e);
-// 	});
-// 	// currentImgIndex = index;
-// });
-
-// const nextFoto = () => {
-// 	if (currentImgIndex < THUMBNAILS.length - 1) {
-// 		currentImgIndex++;
-// 	}else {
-// 		currentImgIndex = 0;
-// 	}
-// 		POPUP_IMG.src = THUMBNAILS[currentImgIndex].src;
-// };
-
-// POPUP.addEventListener("click", fotoClose);
-// ARROW_RIGHT.addEventListener("click", nextFoto);
-
-// THUMBNAILS.addEventListener('click', fotoScale);
-
 const fotoScale = (e) => {
 	currentImgIndex = Array.from(THUMBNAILS).indexOf(e.target); // Ustawienie currentImgIndex na indeks klikniętej miniatury
 	POPUP.classList.remove("hidden");
@@ -63,8 +33,20 @@ const nextFoto = () => {
 	POPUP_IMG.src = THUMBNAILS[currentImgIndex].src;
 };
 
+const prevFoto = () => {
+	currentImgIndex = (currentImgIndex - 1 + THUMBNAILS.length) % THUMBNAILS.length;
+	POPUP_IMG.src = THUMBNAILS[currentImgIndex].src;
+}
+
+ARROW_LEFT.addEventListener("click", (event) => {
+	event.stopPropagation(); // Zatrzymuje propagację zdarzenia, aby uniknąć wywołania funkcji fotoClose
+	prevFoto();
+});
+
 ARROW_RIGHT.addEventListener("click", (event) => {
 	event.stopPropagation(); // Zatrzymuje propagację zdarzenia, aby uniknąć wywołania funkcji fotoClose
 	nextFoto();
 });
+
+
 POPUP.addEventListener("click", fotoClose);
