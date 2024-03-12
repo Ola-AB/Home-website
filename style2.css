@@ -465,7 +465,6 @@ body {
 	width: 100vw;
 	left: 0;
 	top: 0;
-	
 }
 
 .popup__img {
@@ -473,6 +472,49 @@ body {
 	max-width: 80%;
 }
 
+.popup.hidden {
+	display: none;
+}
+
+.popup__close {
+	font-size: 10rem;
+	background-color: transparent;
+	border: none;
+	position: fixed;
+	right: 10rem;
+	top: 2rem;
+	cursor: pointer;
+}
+
+.popup__arrow {
+	position: absolute;
+	font-size: 10rem;
+	height: 10rem;
+	width: 10rem;
+	line-height: 1rem;
+	/* border-radius: 50pc; */
+	background-color: transparent;
+	
+	border: none;
+	top: 50%;	
+	cursor: pointer;
+	transition: color 0.3s;
+}
+
+.popup__arrow, .popup__close {
+	color: rgba(255, 255, 255, 0.5);
+}
+
+.popup__arrow:hover, .popup__close:hover {
+	color:  #fff;
+}
+
+.popup__arrow--left {
+	left: 5%;
+}
+.popup__arrow--right {
+	right: 5%;
+}
 
 /* media queries */
 
