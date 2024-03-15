@@ -427,7 +427,7 @@ body {
 	justify-content: space-between;
 	list-style-type: none;
 	justify-content: center;
-	background-color: #1c1121e4;
+	background-color: hwb(281 7% 87% / 0.894);
 	padding: 2em;
 }
 .thumbnail {
@@ -453,9 +453,14 @@ body {
 	object-fit: inherit; /* sprawia że zdjęcia nie są nienaturalnie rozciągnięte */
 }
 
+.thumbnail img :focus-visible {
+	border: solid 5px #7a7adb;
+}
+
 .popup {
 	position: absolute;
 	display: flex;
+	animation: fadeIn 0.3s;
 	align-content: center;
 	justify-content: center;
 	flex-wrap: wrap;
@@ -476,6 +481,10 @@ body {
 	display: none;
 }
 
+.popup.fade-out {
+	animation: fadeOut 0.3s both;
+}
+
 .popup__close {
 	font-size: 6rem;
 	background-color: transparent;
@@ -494,19 +503,21 @@ body {
 	line-height: 1rem;
 	/* border-radius: 50pc; */
 	background-color: transparent;
-	
+
 	border: none;
-	top: 50%;	
+	top: 50%;
 	cursor: pointer;
 	transition: color 0.3s;
 }
 
-.popup__arrow, .popup__close {
+.popup__arrow,
+.popup__close {
 	color: rgba(255, 255, 255, 0.5);
 }
 
-.popup__arrow:hover, .popup__close:hover {
-	color:  #fff;
+.popup__arrow:hover,
+.popup__close:hover {
+	color: #fff;
 }
 
 .popup__arrow--left {
@@ -539,6 +550,23 @@ body {
 		margin-left: 2em; /* Reset marginesu */
 		align-items: flex-start; /* Przywrócenie do domyślnego ustawienia */
 		text-align: left;
+	}
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+@keyframes fadeOut {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
 	}
 }
 
