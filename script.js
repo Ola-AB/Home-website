@@ -20,13 +20,17 @@ const fotoScale = (e) => {
 };
 
 const fotoClose = (event) => {
-	POPUP.classList.add("fade-out")
+	POPUP.classList.add("fade-out");
 	if (!POPUP.classList.contains("hidden")) {
 		setTimeout(() => {
 			POPUP.classList.add("hidden");
 			POPUP.classList.remove("fade-out");
+			THUMBNAILS.forEach((element) => {
+				element.setAttribute("tabindex", 1);
+			});
 		}, 300);
-	} if (event) event.stopPropagation();
+	}
+	if (event) event.stopPropagation();
 };
 
 const nextFoto = () => {
@@ -71,11 +75,17 @@ ARROW_RIGHT.addEventListener("click", (event) => {
 	nextFoto();
 });
 
-
 THUMBNAILS.forEach((thumbnail) => {
 	thumbnail.addEventListener("click", fotoScale);
+	THUMBNAILS.forEach((element) => {
+		element.setAttribute("tabindex", -1);
+	});
+	thumbnail.addEventListener("keydown", (e) => {
+		if (e.code === "Enter") {
+			fotoScale(e);
+		}
+	});
 });
-
 
 document.addEventListener("keydown", arrowKey);
 // Resetowanie flagi, gdy klawisz strzałki w prawo zostanie zwolniony
@@ -86,5 +96,4 @@ document.addEventListener("keyup", (e) => {
 	}
 });
 
-
-POPUP.addEventListener('click', fotoClose);
+POPUP.addEventListener("click", fotoClose);

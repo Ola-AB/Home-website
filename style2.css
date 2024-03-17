@@ -24,7 +24,7 @@ body {
 .header {
 	position: relative;
 	width: 100%;
-	height: 50vh;
+	height: 55vh;
 	background-image: url(./img/beach_logo_640.jpg);
 	background-size: cover;
 }
@@ -216,7 +216,6 @@ body {
 /* about me */
 
 .about-me {
-	margin: 1em 0;
 	background-color: #fff;
 	display: flex;
 	flex-direction: column;
@@ -231,13 +230,14 @@ body {
 }
 
 .about-me-img {
-	margin: 2em auto;
-	width: 30rem;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) scale(0.8);
 	max-width: 100%;
 	border: #464159;
 	border-radius: 50%;
 	display: block;
-	z-index: 100;
 }
 
 /* .circle-icon {
@@ -453,8 +453,9 @@ body {
 	object-fit: inherit; /* sprawia że zdjęcia nie są nienaturalnie rozciągnięte */
 }
 
-.thumbnail img :focus-visible {
-	border: solid 5px #7a7adb;
+.thumbnail img:focus,
+.thumbnail img:focus-visible {
+	border: solid 5px #1a1a2f;
 }
 
 .popup {
@@ -527,32 +528,6 @@ body {
 	right: 5%;
 }
 
-/* media queries */
-
-@media (min-width: 576px) {
-	.about-me {
-		flex-direction: row;
-		justify-content: space-between;
-		align-items: flex-start;
-		text-align: left;
-	}
-	.foto-section {
-		width: 60em;
-	}
-
-	.about-me-img {
-		margin: 2em 2em; /* Przywrócenie marginesów dla obrazu */
-	}
-
-	.about-me-info {
-		max-width: none;
-		margin-top: 0;
-		margin-left: 2em; /* Reset marginesu */
-		align-items: flex-start; /* Przywrócenie do domyślnego ustawienia */
-		text-align: left;
-	}
-}
-
 @keyframes fadeIn {
 	from {
 		opacity: 0;
@@ -567,6 +542,31 @@ body {
 	}
 	to {
 		opacity: 0;
+	}
+}
+
+/* media queries */
+
+@media (min-width: 576px) {
+	.about-me {
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: flex-start;
+	}
+	.foto-section {
+		width: 60em;
+	}
+
+	/* .about-me-img {
+		margin: 2em 2em; Przywrócenie marginesów dla obrazu
+	} */
+
+	.about-me-info {
+		max-width: none;
+		margin-top: 0;
+		margin-left: 2em; /* Reset marginesu */
+		align-items: flex-start; /* Przywrócenie do domyślnego ustawienia */
+		text-align: left;
 	}
 }
 
