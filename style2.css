@@ -406,6 +406,27 @@ body {
 	border-bottom: none;
 }
 
+/* projects */
+
+.project__card {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    border-radius: 2rem;
+    flex: 1 0 min(300px, 100%);
+    justify-content: space-between;
+    background: #b474d4;
+}
+
+.projects h1 {
+	padding: 1em 2em;
+	align-items: center;
+	text-align: center;
+	font-family: "Source", cursive;
+	font-size: 2.4rem;
+	text-transform: uppercase;
+}
+
 /* hobbies */
 .hobbies h1 {
 	padding: 1em 2em;
